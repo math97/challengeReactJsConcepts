@@ -1,3 +1,30 @@
-.task {
-  background: var(--gray-700);
+.tasks {
+  width: 46rem;
+  margin: 5.68rem 22rem 0rem;
+  display: flex;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content:space-between ; 
+  padding: 0 0 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.created {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--blue);
+}
+
+.done{
+  display: flex;
+  gap: 0.5rem;
+  color: var(--purple-dark);
+}
+
+.tasksList {
+  
 }
