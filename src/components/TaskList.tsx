@@ -4,35 +4,11 @@ import {Task,ITask} from './Task'
 
 import styles from './TaskList.module.css';
 
-// interface TaskProps {
-//   tasks : Task[]
-// }
+interface TaskProps {
+  tasks : ITask[]
+}
 
-// interface Task {
-//   id : string;
-//   content: string;
-//   isDone: boolean;
-// }
-
-export function TaskList(){
-  const tasks:ITask[] = [
-    {
-      id:'1',
-      content:"hsagshgahashsashsagshgahashsashsagshgasasssasasaasasasaasassasasassasasasasassaasasasasasasassasas",
-      isDone:false,
-    },
-    {
-      id:'2',
-      content:"testando",
-      isDone:false,
-    },
-    {
-      id:'3',
-      content:"bora birl",
-      isDone:true,
-    }
-  ]
-  
+export function TaskList({tasks}:TaskProps){
   if(tasks.length === 0) 
   {
     return (
@@ -48,7 +24,10 @@ export function TaskList(){
         {
           tasks.map(task =>{
             return (
-              <Task task={task} />
+              <Task
+                key={task.content}
+               task={task} 
+               />
             )
           })  
         }

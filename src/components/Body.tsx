@@ -4,14 +4,25 @@ import {NewTask} from './NewTask'
 import {Counter} from './Counter'
 import {TaskList} from './TaskList'
 import { useState } from 'react';
+import { ITask } from './Task';
 
 export function Body(){
 
-  const [tasks,setTasks] = useState([]);
+  const [tasks,setTasks] = useState([
+    {
+      id:'1',
+      content:'terminar a estrutura html',
+      isDone:false,
+    }
+  ]);
+
+  function createNewTask(task:ITask){
+    setTasks([...tasks,task])
+  }  
 
   return (
     <div>
-      <NewTask />
+      <NewTask onCreateNewTask={createNewTask} />
       <article className={styles.tasks}>
         <section className={styles.tasksHeader}>
           <div className={styles.info}>
@@ -25,7 +36,7 @@ export function Body(){
             </div>
           </div>
         </section>
-        <TaskList/>
+        <TaskList tasks={tasks}/>
       </article>
     </div>
   )
