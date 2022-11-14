@@ -24,12 +24,10 @@ export function NewTask ({onCreateNewTask}:INewTaskProps){
     onCreateNewTask(task)
   }
 
-
   function handleInputChange(event:ChangeEvent<HTMLInputElement>){
     setInput(event.target.value)
   }
 
-  
   return (
     <form  onSubmit={handleCreateNewTask} className={styles.formNewTask}>
       <input

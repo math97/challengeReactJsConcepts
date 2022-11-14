@@ -2,7 +2,8 @@ import styles from './Task.module.css';
 
 import { Trash,Circle, CheckCircle} from 'phosphor-react'
 interface ITaskProps {
-  task : ITask
+  task : ITask,
+  onDeleteTask:(id:string)=>void,
 }
 
 export interface ITask {
@@ -11,14 +12,18 @@ export interface ITask {
   isDone: boolean;
 }
 
-export function Task({task}:ITaskProps){
+export function Task({task,onDeleteTask}:ITaskProps){
+  function handleOnDelete(){
+    onDeleteTask(task.id)
+  }
+
   return (
     <div className={styles.task}>
       <button className={task.isDone ? styles.done : styles.notDone} >
         {task.isDone ? <CheckCircle  size={24} /> : <Circle size={24} /> }
       </button>
       <span  className={task.isDone ? styles.contentDone:styles.content}>{task.content}</span>
-      <button>
+      <button onClick={handleOnDelete}>
         <Trash size={24} />
       </button>
     </div>

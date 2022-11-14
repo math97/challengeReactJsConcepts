@@ -5,10 +5,11 @@ import {Task,ITask} from './Task'
 import styles from './TaskList.module.css';
 
 interface TaskProps {
-  tasks : ITask[]
+  tasks : ITask[],
+  onDeleteTask:(id:string)=>void,
 }
 
-export function TaskList({tasks}:TaskProps){
+export function TaskList({tasks,onDeleteTask}:TaskProps){
   if(tasks.length === 0) 
   {
     return (
@@ -27,6 +28,7 @@ export function TaskList({tasks}:TaskProps){
               <Task
                 key={task.id}
                 task={task} 
+                onDeleteTask={onDeleteTask}
                />
             )
           })  
@@ -34,5 +36,4 @@ export function TaskList({tasks}:TaskProps){
       </div>
     )
   }
-  
 }

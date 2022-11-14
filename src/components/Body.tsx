@@ -18,7 +18,14 @@ export function Body(){
 
   function createNewTask(task:ITask){
     setTasks([...tasks,task])
-  }  
+  }
+  
+  function deleteTask(id:string){
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task.id !== id;
+    })
+    setTasks(tasksWithoutDeletedOne);
+  }
 
   return (
     <div>
@@ -36,7 +43,7 @@ export function Body(){
             </div>
           </div>
         </section>
-        <TaskList tasks={tasks}/>
+        <TaskList tasks={tasks} onDeleteTask={deleteTask}/>
       </article>
     </div>
   )
