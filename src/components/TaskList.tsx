@@ -25,8 +25,8 @@ export function TaskList({tasks}:TaskProps){
           tasks.map(task =>{
             return (
               <Task
-                key={task.content}
-               task={task} 
+                key={task.id}
+                task={task} 
                />
             )
           })  
