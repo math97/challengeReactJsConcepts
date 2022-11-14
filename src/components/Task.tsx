@@ -1,8 +1,6 @@
 import styles from './Task.module.css';
 
 import { Trash,Circle, CheckCircle} from 'phosphor-react'
-
-
 interface ITaskProps {
   task : ITask
 }
@@ -17,9 +15,9 @@ export function Task({task}:ITaskProps){
   return (
     <div className={styles.task}>
       <button className={task.isDone ? styles.done : styles.notDone} >
-        {task.isDone ? <CheckCircle size={24} /> : <Circle size={24} /> }
+        {task.isDone ? <CheckCircle  size={24} /> : <Circle size={24} /> }
       </button>
-      <span  className={styles.content}>{task.content}</span>
+      <span  className={task.isDone ? styles.contentDone:styles.content}>{task.content}</span>
       <button>
         <Trash size={24} />
       </button>

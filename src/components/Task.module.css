@@ -15,6 +15,7 @@
 .task > button{
   background: transparent;
   border: 0;
+  cursor: pointer;
 }
 
 .task > button:last-of-type{
@@ -36,13 +37,18 @@
   color: var(--purple-dark);
 }
 
-.content {
+.task > span {
   width: 34rem;
-
   max-inline-size: 34rem;
   flex-wrap: wrap;
   overflow-wrap: break-word;
-
-  color: var(--gray-100);
   font-size: 0.875rem;
+}
+.content{
+  color: var(--gray-100);
+}
+
+.contentDone {
+  color: var(--gray-300);
+  text-decoration: line-through;
 }
