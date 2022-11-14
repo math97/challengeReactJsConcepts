@@ -1,6 +1,13 @@
 .tasks {
+  height: 17.93rem;
   width: 46rem;
-  margin: 5.68rem 22rem 0rem;
+  margin: 0 22rem 0;
+}
+
+.tasksHeader {
+  height: 2.68rem;
+  width: 100%;
+  margin: 5.68rem  0rem 0rem;
   display: flex;
 }
 
@@ -23,8 +30,4 @@
   display: flex;
   gap: 0.5rem;
   color: var(--purple-dark);
-}
-
-.tasksList {
-  
 }

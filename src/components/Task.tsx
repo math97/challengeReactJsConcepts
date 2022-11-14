@@ -2,25 +2,30 @@ import styles from './Task.module.css';
 
 import {NewTask} from './NewTask'
 import {Counter} from './Counter'
+import {TaskList} from './TaskList'
+import { useState } from 'react';
 
 export function Task(){
+
+  const [tasks,setTasks] = useState([]);
+
   return (
     <div>
       <NewTask />
       <article className={styles.tasks}>
-        <div className={styles.info}>
-          <div className={styles.created}>
-            <span>Tarefas Criadas</span>
-            <Counter counter={0} />
+        <section className={styles.tasksHeader}>
+          <div className={styles.info}>
+            <div className={styles.created}>
+              <span>Tarefas Criadas</span>
+              <Counter counter={0} />
+            </div>
+            <div className={styles.done}>
+              <span>Concluídas</span>
+              <Counter counter={0}/>
+            </div>
           </div>
-          <div className={styles.done}>
-            <span>Concluídas</span>
-            <Counter counter={0}/>
-          </div>
-        </div>
-        <div className='tasksList'>
-          
-        </div>
+        </section>
+        <TaskList/>
       </article>
     </div>
   )
