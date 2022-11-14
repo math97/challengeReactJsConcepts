@@ -22,6 +22,7 @@ export function NewTask ({onCreateNewTask}:INewTaskProps){
       isDone:false,
     }
     onCreateNewTask(task)
+    setInput('')
   }
 
   function handleInputChange(event:ChangeEvent<HTMLInputElement>){
