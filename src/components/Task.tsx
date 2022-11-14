@@ -14,13 +14,12 @@ export interface ITask {
 }
 
 export function Task({task}:ITaskProps){
-  console.log(`aquiii`,task);
   return (
     <div className={styles.task}>
       <button className={task.isDone ? styles.done : styles.notDone} >
         {task.isDone ? <CheckCircle size={24} /> : <Circle size={24} /> }
       </button>
-      <span className={styles.content}>{task.content}</span>
+      <span  className={styles.content}>{task.content}</span>
       <button>
         <Trash size={24} />
       </button>
