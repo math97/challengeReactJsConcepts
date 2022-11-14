@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {Header} from './components/Header'
-import {Task} from './components/Task'
+import {Body} from './components/Body'
 import './global.css';
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Task />
+      <Body />
     </div>
   )
 }

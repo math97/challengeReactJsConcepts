@@ -1,11 +1,11 @@
-import styles from './Task.module.css';
+import styles from './Body.module.css';
 
 import {NewTask} from './NewTask'
 import {Counter} from './Counter'
 import {TaskList} from './TaskList'
 import { useState } from 'react';
 
-export function Task(){
+export function Body(){
 
   const [tasks,setTasks] = useState([]);
 
