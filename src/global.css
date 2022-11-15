@@ -12,8 +12,11 @@
 
   --blue:#4EA8DE;
   --blue-dark:#1E6F9F;
+
   --purple:#5E60CE;
   --purple-dark:#8284FA;
+
+  --danger:#E25858;
 }
 
 :focus {

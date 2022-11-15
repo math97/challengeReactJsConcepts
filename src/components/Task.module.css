@@ -23,8 +23,19 @@
   padding: 0 1rem 0 0;
 }
 
+.task > button:last-of-type:hover{
+  color: var(--danger);
+  background:var(--gray-400);
+  border-radius: 4px;
+}
+
 .task > button:first-of-type{
   padding: 0 0 0 1rem;
+}
+
+.task > button:focus{
+  box-shadow: none;
+  background:transparent;
 }
 
 .notDone {
@@ -32,7 +43,7 @@
 }
 
 .notDone:hover {
-  background: var(--blue-dark);
+  
 }
 
 .done {
@@ -41,7 +52,7 @@
 }
 
 .done:hover {
-  background: var(--blue-dark);
+
 }
 
 .task > span {
