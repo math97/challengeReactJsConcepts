@@ -35,11 +35,11 @@ export function Body(){
           <div className={styles.info}>
             <div className={styles.created}>
               <span>Tarefas Criadas</span>
-              <Counter isDone={false} counter={0} />
+              <Counter isDone={false} tasks={tasks} />
             </div>
             <div className={styles.done}>
               <span>Concluídas</span>
-              <Counter isDone={true} total={3} counter={1}/>
+              <Counter isDone={true} tasks={tasks}/>
             </div>
           </div>
         </section>

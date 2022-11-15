@@ -1,22 +1,26 @@
 import styles from './Counter.module.css';
+import { ITask } from './Task';
 
 interface CounterProps {
-  counter:number;
+  tasks:ITask[];
   isDone: boolean;
-  total?: number;
 }
 
-export function Counter({counter = 0,isDone,total}:CounterProps){
+export function Counter({tasks = [],isDone}:CounterProps){
+  const tasksDone = tasks.filter(task=>{
+    if(task.isDone===true) return task;
+  })
+  
   if(isDone){
     return (
       <div className={styles.counter}>
-        <span>{counter} de {total}</span>
+        <span>{tasksDone.length} de {tasks.length}</span>
       </div>
     )
   }else { 
     return (
       <div className={styles.counter}>
-        <span>{counter}</span>
+        <span>{tasks.length}</span>
       </div>
     )
   }
