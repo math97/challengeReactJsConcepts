@@ -7,9 +7,10 @@ import styles from './TaskList.module.css';
 interface TaskProps {
   tasks : ITask[],
   onDeleteTask:(id:string)=>void,
+  onSetTaskStatus:(id:string)=>void,
 }
 
-export function TaskList({tasks,onDeleteTask}:TaskProps){
+export function TaskList({tasks,onDeleteTask,onSetTaskStatus}:TaskProps){
   if(tasks.length === 0) 
   {
     return (
@@ -29,6 +30,7 @@ export function TaskList({tasks,onDeleteTask}:TaskProps){
                 key={task.id}
                 task={task} 
                 onDeleteTask={onDeleteTask}
+                onSetTaskStatus={onSetTaskStatus}
                />
             )
           })  

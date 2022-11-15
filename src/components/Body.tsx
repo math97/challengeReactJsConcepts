@@ -27,6 +27,17 @@ export function Body(){
     setTasks(tasksWithoutDeletedOne);
   }
 
+  function setTaskStatus(id:string){
+    const tasksUpdated = tasks.map(task => {
+      if(task.id === id){
+        task.isDone = !task.isDone
+      }
+      return task;
+    })
+    
+    setTasks(tasksUpdated);
+  }
+
   return (
     <div>
       <NewTask onCreateNewTask={createNewTask} />
@@ -43,7 +54,7 @@ export function Body(){
             </div>
           </div>
         </section>
-        <TaskList tasks={tasks} onDeleteTask={deleteTask}/>
+        <TaskList tasks={tasks} onDeleteTask={deleteTask} onSetTaskStatus={setTaskStatus}/>
       </article>
     </div>
   )
