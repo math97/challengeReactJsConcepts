@@ -29,12 +29,19 @@
 
 .notDone {
   color: var(--blue);
+}
 
+.notDone:hover {
+  background: var(--blue-dark);
 }
 
 .done {
   opacity: 0.9;
   color: var(--purple-dark);
+}
+
+.done:hover {
+  background: var(--blue-dark);
 }
 
 .task > span {

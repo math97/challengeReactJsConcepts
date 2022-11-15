@@ -16,7 +16,12 @@
   background: var(--gray-500);
   border: 1px solid var(--gray-700);
   border-radius: 0.5rem;
+}
 
+.formNewTask > input:focus {
+  color: var(--gray-100);
+  outline: 1px solid #8284FA;
+  box-shadow: none;
 }
 
 .formNewTask > button {
@@ -36,5 +41,15 @@
   font-weight: 700;
   font-size: 0.8rem;
   color: var(--white);
+}
 
+.formNewTask > button:hover {
+  background:var(--blue);
+  color: var(--white);
+  transition: 0.2s;
+}
+
+.formNewTask > button:focus {
+  outline: 1px solid #4EA8DE;
+  box-shadow: none;
 }
